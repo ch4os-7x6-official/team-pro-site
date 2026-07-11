@@ -337,8 +337,6 @@
             color: #80FF80;
         }
 
-
-
         /* ── HOW TO USE ── */
         .steps {
             display: flex;
@@ -390,8 +388,6 @@
             border-radius: 3px;
         }
 
-
-
         /* ── FOOTER ── */
         footer {
             border-top: 1px solid rgba(170,0,0,0.2);
@@ -431,9 +427,7 @@
     <div class="nav-logo">TEAM <span>PRO</span></div>
     <ul class="nav-links">
         <li><a href="#scripts">Scripts</a></li>
-
         <li><a href="#howto">How To Use</a></li>
-
     </ul>
 </nav>
 
@@ -448,7 +442,6 @@
     </p>
     <div class="hero-btns">
         <a href="#scripts" class="btn btn-primary">Get The Script</a>
-
     </div>
 </div>
 
@@ -459,28 +452,8 @@
     <p class="section-label">// scripts</p>
     <h2 class="section-title reveal">Choose Your Version</h2>
     <p class="section-desc reveal">Copy the loadstring below and paste it into your executor.</p>
-    <div class="scripts-grid">
-
-        <div class="script-card reveal">
-            <span class="script-badge badge-main">Main</span>
-            <div class="script-name">Pro GUI (Broken. Fixing soon)</div>
-            <p class="script-desc">Full version with all features. Requires a valid key to unlock Universal and Game Specific tabs.</p>
-            <div class="code-block" id="code1">loadstring(game:HttpGet('https://raw.githubusercontent.com/ch4os-7x6-official/Scripts/refs/heads/main/Pro%20GUI'))()</div>
-            <button class="copy-btn" onclick="copyScript('code1', this)">Copy Loadstring</button>
-        </div>
-
-        <div class="script-card reveal">
-            <span class="script-badge badge-lite">Keyless</span>
-            <div class="script-name">Pro GUI Lite</div>
-            <p class="script-desc">Keyless version with core features available immediately. No key required.</p>
-            <div class="code-block" id="code2">loadstring(game:HttpGet('https://raw.githubusercontent.com/ch4os-7x6-official/Scripts/refs/heads/main/Pro%20GUI%20lite'))()</div>
-            <button class="copy-btn" onclick="copyScript('code2', this)">Copy Loadstring</button>
-        </div>
-
-    </div>
+    <div class="scripts-grid"></div>
 </section>
-
-
 
 <div class="divider"></div>
 
@@ -489,46 +462,8 @@
     <p class="section-label">// how to use</p>
     <h2 class="section-title reveal">Getting Started</h2>
     <p class="section-desc reveal">Follow these steps to get up and running.</p>
-    <div class="steps">
-        <div class="step reveal">
-            <div class="step-num">1</div>
-            <div class="step-content">
-                <div class="step-title">Get an Executor</div>
-                <div class="step-body">Download a Roblox script executor such as Synapse X, KRNL, or any other supported executor.</div>
-            </div>
-        </div>
-        <div class="step reveal">
-            <div class="step-num">2</div>
-            <div class="step-content">
-                <div class="step-title">Copy the Loadstring</div>
-                <div class="step-body">Head to the <a href="#scripts" style="color:var(--accent)">Scripts</a> section and copy the loadstring for the version you want.</div>
-            </div>
-        </div>
-        <div class="step reveal">
-            <div class="step-num">3</div>
-            <div class="step-content">
-                <div class="step-title">Inject and Execute</div>
-                <div class="step-body">Open Roblox, inject your executor, paste the loadstring into the executor and hit execute.</div>
-            </div>
-        </div>
-        <div class="step reveal">
-            <div class="step-num">4</div>
-            <div class="step-content">
-                <div class="step-title">Enter Your Key (Main only)</div>
-                <div class="step-body">If using Pro GUI (main), complete the key system to unlock all features. The key lasts <code>24 hours</code>. Pro GUI Lite requires no key.</div>
-            </div>
-        </div>
-        <div class="step reveal">
-            <div class="step-num">5</div>
-            <div class="step-content">
-                <div class="step-title">Open the GUI</div>
-                <div class="step-body">The GUI will appear after loading. Use the <code>Pro GUI</code> button in the bottom left to reopen it if closed.</div>
-            </div>
-        </div>
-    </div>
+    <div class="steps"></div>
 </section>
-
-
 
 <!-- FOOTER -->
 <footer>
@@ -537,7 +472,85 @@
 </footer>
 
 <script>
-    // Copy script buttons
+    // ── EASY CUSTOMIZATION ──
+    // To add a new script card: add an entry to the SCRIPTS array
+    // To add a new how-to step: add an entry to the STEPS array
+
+    const SCRIPTS = [
+        {
+            badge: "Main",
+            badgeType: "main",
+            name: "Pro GUI (Broken. Fixing soon)",
+            desc: "Full version with all features. Requires a valid key to unlock Universal and Game Specific tabs.",
+            loadstring: "loadstring(game:HttpGet('https://raw.githubusercontent.com/ch4os-7x6-official/Scripts/refs/heads/main/Pro%20GUI'))()"
+        },
+        {
+            badge: "Keyless",
+            badgeType: "lite",
+            name: "Pro GUI Lite",
+            desc: "Keyless version with core features available immediately. No key required.",
+            loadstring: "loadstring(game:HttpGet('https://raw.githubusercontent.com/ch4os-7x6-official/Scripts/refs/heads/main/Pro%20GUI%20lite'))()"
+        },
+    ];
+
+    const STEPS = [
+        {
+            title: "Get an Executor",
+            body: "Download a Roblox script executor such as Synapse X, KRNL, or any other supported executor."
+        },
+        {
+            title: "Copy the Loadstring",
+            body: `Head to the <a href="#scripts" style="color:var(--accent)">Scripts</a> section and copy the loadstring for the version you want.`
+        },
+        {
+            title: "Inject and Execute",
+            body: "Open Roblox, inject your executor, paste the loadstring into the executor and hit execute."
+        },
+        {
+            title: "Enter Your Key (Main only)",
+            body: "If using Pro GUI (main), complete the key system to unlock all features. The key lasts <code>24 hours</code>. Pro GUI Lite requires no key."
+        },
+        {
+            title: "Open the GUI",
+            body: "The GUI will appear after loading. Use the <code>Pro GUI</code> button in the bottom left to reopen it if closed."
+        },
+    ];
+
+    // ── DON'T TOUCH BELOW THIS LINE ──
+
+    function buildScripts() {
+        const grid = document.querySelector('.scripts-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        SCRIPTS.forEach((s, i) => {
+            const id = 'code' + i;
+            grid.innerHTML += `
+            <div class="script-card reveal">
+                <span class="script-badge badge-${s.badgeType}">${s.badge}</span>
+                <div class="script-name">${s.name}</div>
+                <p class="script-desc">${s.desc}</p>
+                <div class="code-block" id="${id}">${s.loadstring}</div>
+                <button class="copy-btn" onclick="copyScript('${id}', this)">Copy Loadstring</button>
+            </div>`;
+        });
+    }
+
+    function buildSteps() {
+        const container = document.querySelector('.steps');
+        if (!container) return;
+        container.innerHTML = '';
+        STEPS.forEach((s, i) => {
+            container.innerHTML += `
+            <div class="step reveal">
+                <div class="step-num">${i + 1}</div>
+                <div class="step-content">
+                    <div class="step-title">${s.title}</div>
+                    <div class="step-body">${s.body}</div>
+                </div>
+            </div>`;
+        });
+    }
+
     function copyScript(id, btn) {
         const text = document.getElementById(id).textContent;
         navigator.clipboard.writeText(text).then(() => {
@@ -550,7 +563,9 @@
         });
     }
 
-    // Scroll reveal
+    buildScripts();
+    buildSteps();
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) {
