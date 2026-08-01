@@ -1,36 +1,3 @@
--Skids are not welcome! 
--Don't steal, mother fucker!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* ── Scanline overlay ── */
         body::before {
             content: '';
             position: fixed;
@@ -80,7 +46,6 @@
             z-index: 9999;
         }
 
-        /* ── NAV ── */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -122,7 +87,6 @@
 
         .nav-links a:hover { color: var(--accent2); }
 
-        /* ── HERO ── */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -231,7 +195,6 @@
             color: var(--text);
         }
 
-        /* ── SECTION SHELL ── */
         section {
             padding: 80px 24px;
             max-width: 960px;
@@ -263,7 +226,6 @@
             line-height: 1.75;
         }
 
-        /* ── DIVIDER ── */
         .divider {
             width: 100%;
             height: 1px;
@@ -271,7 +233,6 @@
             margin: 0 auto;
         }
 
-        /* ── SCRIPTS ── */
         .scripts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -312,8 +273,9 @@
             margin-bottom: 14px;
         }
 
-        .badge-main { background: rgba(170,0,0,0.2); color: var(--accent2); border: 1px solid rgba(170,0,0,0.3); }
-        .badge-lite { background: rgba(80,80,80,0.2); color: var(--subtext); border: 1px solid rgba(100,100,100,0.3); }
+        .badge-main  { background: rgba(170,0,0,0.2); color: var(--accent2); border: 1px solid rgba(170,0,0,0.3); }
+        .badge-lite  { background: rgba(80,80,80,0.2); color: var(--subtext); border: 1px solid rgba(100,100,100,0.3); }
+        .badge-admin { background: rgba(170,0,0,0.15); color: #FF6666; border: 1px solid rgba(170,0,0,0.25); }
 
         .script-name {
             font-family: 'Rajdhani', sans-serif;
@@ -370,7 +332,6 @@
             color: #80FF80;
         }
 
-        /* ── HOW TO USE ── */
         .steps {
             display: flex;
             flex-direction: column;
@@ -421,7 +382,100 @@
             border-radius: 3px;
         }
 
-        /* ── FOOTER ── */
+        /* ── SUPPORTED GAMES ── */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .game-card {
+            background: var(--card);
+            border: 1px solid rgba(170,0,0,0.2);
+            border-radius: 6px;
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+        }
+
+        .game-card:hover {
+            border-color: rgba(170,0,0,0.55);
+            box-shadow: 0 0 18px rgba(170,0,0,0.1);
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .game-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .game-name {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .game-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            background: rgba(170,0,0,0.15);
+            color: #FF6666;
+            border: 1px solid rgba(170,0,0,0.25);
+            flex-shrink: 0;
+        }
+
+        .game-id {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--dim);
+        }
+
+        .game-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 0;
+            background: rgba(170,0,0,0.1);
+            border: 1px solid rgba(170,0,0,0.25);
+            border-radius: 4px;
+            color: var(--subtext);
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .game-link-btn:hover {
+            background: rgba(170,0,0,0.22);
+            border-color: var(--accent);
+            color: var(--text);
+        }
+
         footer {
             border-top: 1px solid rgba(170,0,0,0.2);
             padding: 32px 24px;
@@ -433,7 +487,6 @@
 
         footer span { color: var(--accent); }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             nav { padding: 0 16px; }
             .nav-links { gap: 16px; }
@@ -441,7 +494,6 @@
             .step { flex-direction: column; gap: 10px; }
         }
 
-        /* ── SCROLL REVEAL ── */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -455,16 +507,15 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
     <div class="nav-logo">TEAM <span>PRO</span></div>
     <ul class="nav-links">
         <li><a href="#scripts">Scripts</a></li>
+        <li><a href="#games">Games</a></li>
         <li><a href="#howto">How To Use</a></li>
     </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
     <p class="hero-eyebrow">// Official Team Pro Website</p>
     <h1 class="hero-title">PRO <span class="red">GUI</span></h1>
@@ -475,12 +526,12 @@
     </p>
     <div class="hero-btns">
         <a href="#scripts" class="btn btn-primary">Get The Script</a>
+        <a href="#games" class="btn btn-ghost">Supported Games</a>
     </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- SCRIPTS -->
 <section id="scripts">
     <p class="section-label">// scripts</p>
     <h2 class="section-title reveal">Choose Your Version</h2>
@@ -490,7 +541,15 @@
 
 <div class="divider"></div>
 
-<!-- HOW TO USE -->
+<section id="games">
+    <p class="section-label">// supported games</p>
+    <h2 class="section-title reveal">Admin Supported Games</h2>
+    <p class="section-desc reveal">These games are confirmed to work with the Pro GUI admin panel. Click a card to open the game on Roblox.</p>
+    <div class="games-grid"></div>
+</section>
+
+<div class="divider"></div>
+
 <section id="howto">
     <p class="section-label">// how to use</p>
     <h2 class="section-title reveal">Getting Started</h2>
@@ -504,7 +563,6 @@
 </footer>
 
 <script>
-   
     const SCRIPTS = [
         {
             badge: "Main",
@@ -520,6 +578,20 @@
             desc: "A weaker version but it can do the job.",
             loadstring: "loadstring(game:HttpGet('https://raw.githubusercontent.com/ch4os-7x6-official/Scripts/refs/heads/main/Pro%20GUI%20lite'))()"
         },
+    ];
+
+    const SUPPORTED_GAMES = [
+        { name: "Verity",               placeId: "130059925398579" },
+        { name: "Stay in the Circle",   placeId: "125303772920316" },
+        { name: "Super Toilet Roleplay",placeId: "13780179872"     },
+        { name: "Untitled Trip Game",   placeId: "86595069078642"  },
+        { name: "SWAT vs Jandel",       placeId: "118927117589807" },
+        { name: "Sky Mansion Tycoon",   placeId: "76781027978641"  },
+        { name: "Peppa Pig RP",         placeId: "7025558700"      },
+        { name: "Quarantine Border",    placeId: "110983155735084" },
+        { name: "SWAT vs Sammy",        placeId: "122510670990246" },
+        { name: "RV Cooked?",           placeId: "76437627925169"  },
+        { name: "Roller Coaster Tycoon",placeId: "12565504966"     },
     ];
 
     const STEPS = [
@@ -562,6 +634,24 @@
         });
     }
 
+    function buildGames() {
+        const grid = document.querySelector('.games-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        SUPPORTED_GAMES.forEach(g => {
+            const url = `https://www.roblox.com/games/${g.placeId}`;
+            grid.innerHTML += `
+            <a class="game-card reveal" href="${url}" target="_blank" rel="noopener noreferrer">
+                <div class="game-card-top">
+                    <div class="game-name">${g.name}</div>
+                    <span class="game-badge">Admin Support</span>
+                </div>
+                <div class="game-id">ID: ${g.placeId}</div>
+                <div class="game-link-btn">Open on Roblox →</div>
+            </a>`;
+        });
+    }
+
     function buildSteps() {
         const container = document.querySelector('.steps');
         if (!container) return;
@@ -591,6 +681,7 @@
     }
 
     buildScripts();
+    buildGames();
     buildSteps();
 
     const observer = new IntersectionObserver((entries) => {
