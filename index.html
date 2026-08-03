@@ -87,6 +87,9 @@
 
         .nav-links a:hover { color: var(--accent2); }
 
+        .nav-links a.discord-link { color: #5865F2; }
+        .nav-links a.discord-link:hover { color: #6D78F5; }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -195,6 +198,18 @@
             color: var(--text);
         }
 
+        .btn-discord {
+            background: #5865F2;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(88,101,242,0.4);
+        }
+
+        .btn-discord:hover {
+            background: #6D78F5;
+            box-shadow: 0 0 30px rgba(88,101,242,0.55);
+            transform: translateY(-1px);
+        }
+
         section {
             padding: 80px 24px;
             max-width: 960px;
@@ -275,7 +290,6 @@
 
         .badge-main  { background: rgba(170,0,0,0.2); color: var(--accent2); border: 1px solid rgba(170,0,0,0.3); }
         .badge-lite  { background: rgba(80,80,80,0.2); color: var(--subtext); border: 1px solid rgba(100,100,100,0.3); }
-        .badge-admin { background: rgba(170,0,0,0.15); color: #FF6666; border: 1px solid rgba(170,0,0,0.25); }
 
         .script-name {
             font-family: 'Rajdhani', sans-serif;
@@ -302,7 +316,6 @@
             word-break: break-all;
             line-height: 1.5;
             margin-bottom: 14px;
-            position: relative;
         }
 
         .copy-btn {
@@ -382,7 +395,6 @@
             border-radius: 3px;
         }
 
-        /* ── SUPPORTED GAMES ── */
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -513,6 +525,7 @@
         <li><a href="#scripts">Scripts</a></li>
         <li><a href="#games">Games</a></li>
         <li><a href="#howto">How To Use</a></li>
+        <li><a href="https://discord.gg/JVKvamvnsJ" target="_blank" rel="noopener noreferrer" class="discord-link">Discord</a></li>
     </ul>
 </nav>
 
@@ -527,6 +540,7 @@
     <div class="hero-btns">
         <a href="#scripts" class="btn btn-primary">Get The Script</a>
         <a href="#games" class="btn btn-ghost">Supported Games</a>
+        <a href="https://discord.gg/JVKvamvnsJ" target="_blank" rel="noopener noreferrer" class="btn btn-discord">Join Discord</a>
     </div>
 </div>
 
@@ -581,17 +595,17 @@
     ];
 
     const SUPPORTED_GAMES = [
-        { name: "Verity",               placeId: "130059925398579" },
-        { name: "Stay in the Circle",   placeId: "125303772920316" },
-        { name: "Super Toilet Roleplay",placeId: "13780179872"     },
-        { name: "Untitled Trip Game",   placeId: "86595069078642"  },
-        { name: "SWAT vs Jandel",       placeId: "118927117589807" },
-        { name: "Sky Mansion Tycoon",   placeId: "76781027978641"  },
-        { name: "Peppa Pig RP",         placeId: "7025558700"      },
-        { name: "Quarantine Border",    placeId: "110983155735084" },
-        { name: "SWAT vs Sammy",        placeId: "122510670990246" },
-        { name: "RV Cooked?",           placeId: "76437627925169"  },
-        { name: "Roller Coaster Tycoon",placeId: "12565504966"     },
+        { name: "Verity",                placeId: "130059925398579" },
+        { name: "Stay in the Circle",    placeId: "125303772920316" },
+        { name: "Super Toilet Roleplay", placeId: "13780179872"     },
+        { name: "Untitled Trip Game",    placeId: "86595069078642"  },
+        { name: "SWAT vs Jandel",        placeId: "118927117589807" },
+        { name: "Sky Mansion Tycoon",    placeId: "76781027978641"  },
+        { name: "Peppa Pig RP",          placeId: "7025558700"      },
+        { name: "Quarantine Border",     placeId: "110983155735084" },
+        { name: "SWAT vs Sammy",         placeId: "122510670990246" },
+        { name: "RV Cooked?",            placeId: "76437627925169"  },
+        { name: "Roller Coaster Tycoon", placeId: "12565504966"     },
     ];
 
     const STEPS = [
@@ -608,12 +622,12 @@
             body: "Open Roblox, inject your executor, paste the loadstring into the executor and hit execute."
         },
         {
-            title: "Wait for the script to load",
+            title: "Wait for the Script to Load",
             body: "The <code>Pro GUI</code> is now keyless permanently."
         },
         {
             title: "Open the GUI",
-            body: "The GUI will appear after loading. Use the <code>Pro GUI</code>. Use the open button in the bottom left to reopen it if closed."
+            body: "The GUI will appear after loading. Use the open button in the bottom left to reopen it if closed."
         },
     ];
 
